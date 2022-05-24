@@ -23,6 +23,12 @@ public class RailwayController {
 
 	@Autowired
 	IRailwayServices railwayservice;
+	
+	//welcome message added
+	@GetMapping("/railway/{name}")
+	public String welcome(@PathVariable("name") String name) {
+		return name+", Welcome";
+	}
 
 	//Add Railway Booking
 	@PostMapping("/railway")
