@@ -27,7 +27,7 @@ public class RailwayController {
 	//welcome message added
 	@GetMapping("/railway/{name}")
 	public String welcome(@PathVariable("name") String name) {
-		return name+", Welcome";
+		return name+", Welcome!!!";
 	}
 
 	//Add Railway Booking
