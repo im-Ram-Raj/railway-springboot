@@ -23,7 +23,18 @@ public class RailwayController {
 
 	@Autowired
 	IRailwayServices railwayservice;
+	Logger logger = LoggerFactory.getLogger(RailwayController.class);
 	
+	@RequestMapping("/")
+    	public String index() {
+        	logger.trace("A TRACE Message");
+        	logger.debug("A DEBUG Message");
+       	 	logger.info("An INFO Message");
+        	logger.warn("A WARN Message");
+        	logger.error("An ERROR Message");
+
+        	return "Howdy! Check out the Logs to see the output...";
+   	}
 	//welcome message added
 	@GetMapping("/railway/{name}")
 	public String welcome(@PathVariable("name") String name) {
