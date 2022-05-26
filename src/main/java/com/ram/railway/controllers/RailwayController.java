@@ -46,6 +46,7 @@ public class RailwayController {
 	//Add Railway Booking
 	@PostMapping("/railway")
 	public ResponseEntity<String> addRailwayBooking(@Valid @RequestBody Railway railway) {
+		logger.info("Post mapping called");
 		railwayservice.addRailway(railway);
 		return new ResponseEntity<>("Data added successfully!!", HttpStatus.CREATED);
 	}
