@@ -15,4 +15,6 @@ public interface IRailwayServices {
 		public List<Railway> viewAllBooking();
 		
 		public Railway viewRailwayBookingByID(int id);
+		
+		public List<Railway> addAllRailway(List<Railway> add);
 }

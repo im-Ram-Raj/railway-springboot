@@ -50,4 +50,12 @@ public class RailwayServiceImpl implements IRailwayServices {
 			return null;
 	}
 
+	@Override
+	public List<Railway> addAllRailway(List<Railway> add) {
+		// TODO Auto-generated method stub
+		List<Railway> response = railwaydao.saveAll(add);
+		return response;
+	}
+
+
 }

@@ -40,7 +40,7 @@ public class RailwayController {
 	//welcome message added
 	@GetMapping("/railway/{name}")
 	public String welcome(@PathVariable("name") String name) {
-		return name+", Welcome!!!";
+		return name +", Welcome!!!";
 	}
 
 	//Add Railway Booking
@@ -79,4 +79,14 @@ public class RailwayController {
 		railwayservice.removeRailway(rid);
 		return new ResponseEntity<>("Deleted", HttpStatus.OK);
 	}
+	
+	//Add multiple Railway bookings
+	@PostMapping("/railway/addMultiple")
+	public ResponseEntity<String> addMultipleData(@Valid @RequestBody List<Railway> add){
+		
+		railwayservice.addAllRailway(add);
+		return new ResponseEntity<>("Data Added Successfully!!!", HttpStatus.CREATED);
+	}
+	
+	
 }
